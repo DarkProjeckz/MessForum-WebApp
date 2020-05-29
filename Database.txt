@@ -1,0 +1,7 @@
+Read this !!
+The database with its tables are build.
+Things to do:
+
+* Create a database named "sample" in your MySQL console either phpmyadmin or MySQL Workbench
+* Import the sample.sql file from the console
+* Now you can use the the tables and its data
