@@ -82,16 +82,7 @@ if(isset($_POST['tsub']))
 
 function numgen($id)
 {
-    $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-    
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include 'db.php';
     $name = array("01"=>"egg", "02"=>"chicken", "03"=>"mutton","04"=>"mushroom","05"=>"gobi");
     $sql = "SELECT ".$name[$id]." FROM tcount";
     $result = $conn->query($sql);

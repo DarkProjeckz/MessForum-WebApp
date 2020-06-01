@@ -8,11 +8,7 @@
 <?php include_once '../header.php';
 if(isset($_SESSION['ulogged']))
 {
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "sample";
-  $conn = new mysqli($servername,$username,$password,$dbname);
+  include_once 'db.php';
   $sql="SELECT * FROM notification WHERE id=(SELECT max(id) from notification);";
   $result=$conn->query($sql);
   $resultCheck=$result->num_rows;

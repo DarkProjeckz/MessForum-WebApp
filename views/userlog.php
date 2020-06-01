@@ -2,14 +2,7 @@
         if(isset($_GET['login']))
         {
           session_start();
-          $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          if ($conn->connect_error) {
-               die("Connection failed: " . $conn->connect_error);
-          }
+          include_once 'db.php';
           $rollno=$_GET['rollno'];
           $pass=$_GET['pass'];
           $sql = "SELECT * FROM users where rollno = ".$rollno;

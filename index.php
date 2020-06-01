@@ -116,14 +116,7 @@ function encPass($plainPassword,$salt)
 }
 if(isset($_POST['login']))
 {
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
+include_once 'views/db.php';
 $rollno=(int)$_POST['rollno'];
 $pass=$_POST['pass'];
 $sql = "SELECT * FROM users where rollno = ".$rollno;

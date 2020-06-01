@@ -33,14 +33,7 @@
 
             if(isgap1($_GET['rollno']) && isgap1(trim($_GET['name']," ")) && isgap1($_GET['gender']) && isgap1($_GET['year']) && isgap1($_GET['dep']) && isgap1($_GET['roomno']) && isgap1($_GET['pass']))
         {
-            $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                 die("Connection failed: " . $conn->connect_error);
-             }
+            include_once 'db.php';
             $r=(int)$_GET['rollno'];
             $p=$_GET['pass'];
             $n=$_GET['name'];

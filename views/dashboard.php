@@ -8,11 +8,7 @@
 ?>
 <?php 
 include_once ('../header.php');
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once 'db.php';
 
 $sql1="SELECT * FROM menu WHERE sno<10";
 $brk=$conn->query($sql1);

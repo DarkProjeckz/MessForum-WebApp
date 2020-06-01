@@ -6,14 +6,7 @@
    }
    if(isset($_SESSION['ulogged']))
    {
-   $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-   $conn = new mysqli($servername, $username, $password, $dbname);
-   if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-   }
+   include_once 'db.php';
    $sql = "SELECT * FROM users where id = ".$_SESSION['ulogged'];
    $result = $conn->query($sql);
    $row = $result->fetch_assoc();
@@ -269,14 +262,7 @@ if(isset($_SESSION['logged']))
            <?php 
            if(isset($_GET['sub']))
            {
-         $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "sample";
-                 $conn = new mysqli($servername, $username, $password, $dbname);
-                 if ($conn->connect_error) {
-                     die("Connection failed: " . $conn->connect_error);
-                 }
+                 include_once 'db.php';
                  $sql = "SELECT * from users order by rollno asc";
                  $result = $conn->query($sql);
                  if($result->num_rows > 0)
